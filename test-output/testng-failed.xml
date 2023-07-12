@@ -13,17 +13,10 @@
     <classes>
       <class name="com.mastorly.testcase.Student">
         <methods>
+          <include name="TestCase_4"/>
           <include name="baseTest"/>
-          <include name="TestCase_1"/>
-          <include name="TestCase_2"/>
-          <include name="TestCase_3"/>
         </methods>
       </class> <!-- com.mastorly.testcase.Student -->
-      <class name="com.mastorly.testcase.BaseClass">
-        <methods>
-          <include name="baseTest"/>
-        </methods>
-      </class> <!-- com.mastorly.testcase.BaseClass -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -56,37 +56,39 @@ public class Students extends Scroll {
 	By Save = By.xpath("//button[text()='Save']");
 	By Cancel = By.xpath("//a[text()='Cancel']");
 	By Student_Lists = By.xpath("//td//span[@class='tb-lead']");
+	By UploadFile = By.xpath("//div[@class='fileUploader']");
+	By Upload = By.xpath("//a[text()='Upload']");
 
 	public static void select(By ele) {
 		select = new Select(driver.findElement(ele));
 	}
 
-	public void bulkUpload() {
-		driver.findElement(Bulk_Upload).click();
+	public WebElement bulkUpload() {
+		return driver.findElement(Bulk_Upload);
 	}
 
 	public void scrollToPersonalInformation() {
 		jse.executeScript("arguments[0].scrollIntoView();", driver.findElement(Personal_Information));
 	}
 
-	public void addStudent() {
-		driver.findElement(Add_Student).click();
+	public WebElement addStudent() {
+		return driver.findElement(Add_Student);
 	}
 
-	public void studentName(String name) {
-		driver.findElement(Student_Name).sendKeys(name);
+	public WebElement studentName() {
+		return driver.findElement(Student_Name);
 	}
 
-	public void studentRollNumber(String roll) {
-		driver.findElement(Student_Roll_No).sendKeys(roll);
+	public WebElement studentRollNumber() {
+		return driver.findElement(Student_Roll_No);
 	}
 
-	public void mobileNumber(String num) {
-		driver.findElement(Mobile_Number).sendKeys(num);
+	public WebElement mobileNumber() {
+		return driver.findElement(Mobile_Number);
 	}
 
-	public void emailId(String email) {
-		driver.findElement(Email_ID).sendKeys(email);
+	public WebElement emailId() {
+		return driver.findElement(Email_ID);
 	}
 
 	public void gender(String gender) {
@@ -94,16 +96,16 @@ public class Students extends Scroll {
 		select.selectByVisibleText(gender);
 	}
 
-	public void parentInformation1() {
-		driver.findElement(Parent_Information_1);
+	public WebElement parentInformation1() {
+		return driver.findElement(Parent_Information_1);
 	}
 
-	public void parentFirstName_1(String pfname) {
-		driver.findElement(Parent_First_Name_1).sendKeys(pfname);
+	public WebElement parentFirstName_1() {
+		return driver.findElement(Parent_First_Name_1);
 	}
 
-	public void parentLastName_1(String plname) {
-		driver.findElement(Parent_Last_Name_1).sendKeys(plname);
+	public WebElement parentLastName_1() {
+		return driver.findElement(Parent_Last_Name_1);
 	}
 
 	public void ParentRelationship_1(String relation) {
@@ -111,25 +113,25 @@ public class Students extends Scroll {
 		select.selectByVisibleText(relation);
 	}
 
-	public void Parent_Mobile_Number_1(String pnum) {
-		driver.findElement(Parent_Mobile_Number_1).sendKeys(pnum);
+	public WebElement Parent_Mobile_Number_1() {
+		return driver.findElement(Parent_Mobile_Number_1);
 	}
 
-	public void parentEmailID_1(String email) {
-		driver.findElement(Parent_Email_ID_1).sendKeys(email);
+	public WebElement parentEmailID_1() {
+		return driver.findElement(Parent_Email_ID_1);
 	}
 
-	public void parentInformation2() {
-		driver.findElement(Parent_Information_2);
+	public WebElement parentInformation2() {
+		return driver.findElement(Parent_Information_2);
 	}
 
-	public void parentFirstName_2(String pfname) {
+	public WebElement parentFirstName_2() {
 
-		driver.findElement(Parent_First_Name_2).sendKeys(pfname);
+		return driver.findElement(Parent_First_Name_2);
 	}
 
-	public void parentLastName_2(String plname) {
-		driver.findElement(Parent_Last_Name_2).sendKeys(plname);
+	public WebElement parentLastName_2() {
+		return driver.findElement(Parent_Last_Name_2);
 	}
 
 	public void ParentRelationship_2(String relation) {
@@ -137,20 +139,20 @@ public class Students extends Scroll {
 		select.selectByVisibleText(relation);
 	}
 
-	public void Parent_Mobile_Number_2(String pnum) {
-		driver.findElement(Parent_Mobile_Number_2).sendKeys(pnum);
+	public WebElement Parent_Mobile_Number_2() {
+		return driver.findElement(Parent_Mobile_Number_2);
 	}
 
-	public void parentEmailID_2(String email) {
-		driver.findElement(Parent_Email_ID_2).sendKeys(email);
+	public WebElement parentEmailID_2() {
+		return driver.findElement(Parent_Email_ID_2);
 	}
 
-	public void address(String address) {
-		driver.findElement(Address).sendKeys(address);
+	public WebElement address() {
+		return driver.findElement(Address);
 	}
 
-	public void pinCode(String pincode) {
-		driver.findElement(Pin_code).sendKeys(pincode);
+	public WebElement pinCode() {
+		return driver.findElement(Pin_code);
 	}
 
 	public void state(String state) {
@@ -179,12 +181,12 @@ public class Students extends Scroll {
 		return driver.findElements(Student_Lists);
 	}
 
-	public void save() {
-		driver.findElement(Save).click();
+	public WebElement save() {
+		return driver.findElement(Save);
 	}
 
-	public void cancel() {
-		driver.findElement(Cancel).click();
+	public WebElement cancel() {
+		return driver.findElement(Cancel);
 	}
 
 	public void getActiveStatus(String student_name) {
@@ -195,5 +197,13 @@ public class Students extends Scroll {
 		} else {
 			assertTrue(false);
 		}
+	}
+
+	public WebElement uploadFile() {
+		return driver.findElement(UploadFile);
+	}
+
+	public WebElement upload() {
+		return driver.findElement(Upload);
 	}
 }

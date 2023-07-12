@@ -1,10 +1,13 @@
 package com.mastorly.testcase;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Dummy {
 	static WebDriver driver = null;
@@ -41,14 +44,17 @@ public class Dummy {
 //				.findElement(By.xpath("//a[text()='Dasanapura']//ancestor::tr//descendant::td[6]//descendant::a"))
 //				.getText();
 //		System.out.println(status);
-		meth("Dasanapura");
-	}
+		driver.findElement(By.xpath("//a[text()='Bulk Upload']")).click();
+		Thread.sleep(5000);
 
-	public static void meth(String name) throws InterruptedException {
-		Thread.sleep(4000);
-		String status = driver
-				.findElement(By.xpath("//a[text()='"+name+"']//ancestor::tr//descendant::td[6]//descendant::a"))
-				.getText();
-		System.out.println(status);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath(
+				"//div[@class='nk-block']/div[@class='card card-bordered1']/div/form/div/div[@id='uploadFile']/div/div[@class='fileUploader']"))));
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(
+				"//div[@class='nk-block']/div[@class='card card-bordered1']/div/form/div/div[@id='uploadFile']/div/div[@class='fileUploader']"))));
+		driver.findElement(By.xpath(
+				"//div[@class='nk-block']/div[@class='card card-bordered1']/div/form/div/div[@id='uploadFile']/div/div[@class='fileUploader']"))
+				.sendKeys("C:\\Users\\User.TYSS-RAJESHWAR\\Downloads\\Student_1.csv");
+
 	}
 }

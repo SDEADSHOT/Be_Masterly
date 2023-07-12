@@ -21,7 +21,7 @@ public class BaseClass {
 	static MenuBar menubar = null;
 	static Students students = null;
 	static Actions action = null;
-	static Compare com = null;
+	static Compare com = new Compare();
 
 	@Parameters({ "browser", "s-url", "username", "password" })
 	@BeforeTest
@@ -38,14 +38,14 @@ public class BaseClass {
 		driver.get(url);
 
 		loginpage = new LoginPage(driver);
-		loginpage.username(username);
-		loginpage.password(password);
-		loginpage.signing_in();
+		loginpage.username().sendKeys(username);
+		loginpage.password().sendKeys(password);
+		loginpage.signing_in().click();
 
 		menubar = new MenuBar(driver);
 		students = new Students(driver);
 		action = new Actions(driver);
-		com = new Compare();
+		// com = new Compare();
 	}
 
 }

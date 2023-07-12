@@ -11,17 +11,10 @@
   </listeners>
   <test thread-count="5" name="Test(failed)" verbose="0">
     <classes>
-      <class name="com.mastorly.testcase.BaseClass">
-        <methods>
-          <include name="baseTest"/>
-        </methods>
-      </class> <!-- com.mastorly.testcase.BaseClass -->
       <class name="com.mastorly.testcase.Student">
         <methods>
           <include name="baseTest"/>
-          <include name="TestCase_1"/>
-          <include name="TestCase_2"/>
-          <include name="TestCase_3"/>
+          <include name="TestCase_3" invocation-numbers="0"/>
         </methods>
       </class> <!-- com.mastorly.testcase.Student -->
     </classes>

@@ -2,6 +2,7 @@ package com.mastorly.pom;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class LoginPage {
 	WebDriver driver = null;
@@ -14,15 +15,15 @@ public class LoginPage {
 		this.driver = driver;
 	}
 
-	public void username(String name) {
-		driver.findElement(username).sendKeys(name);
+	public WebElement username() {
+		return driver.findElement(username);
 	}
 
-	public void password(String pass) {
-		driver.findElement(password).sendKeys(pass);
+	public WebElement password() {
+		return driver.findElement(password);
 	}
 
-	public void signing_in() {
-		driver.findElement(sign_in).click();
+	public WebElement signing_in() {
+		return driver.findElement(sign_in);
 	}
 }

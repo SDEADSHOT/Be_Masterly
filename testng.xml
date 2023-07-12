@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<listeners>
+		<listener class-name="com.mastorly.utilities.Listener"></listener>
+	</listeners>
+	<parameter name="StudentName" value="Dasanapura"></parameter>
+	<parameter name="browser" value="chrome"></parameter>
+	<parameter name="username" value="Newvision"></parameter>
+	<parameter name="password" value="Genext@123"></parameter>
+	<parameter name="browser" value="chrome"></parameter>
+	<parameter name="s-url" value="http://newvision.mastorly.com/login"></parameter>
+	<test thread-count="5" name="Test">
+		<classes>
+			
+			<class name="com.mastorly.testcase.BaseClass" />
+			<class name="com.mastorly.testcase.Student" />
+
+		</classes>
+	</test> <!--
+	Test -->
+</suite> <!--
+Suite -->

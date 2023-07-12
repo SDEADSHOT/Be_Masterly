@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <parameter name="password" value="Genext@123"/>
+  <parameter name="browser" value="chrome"/>
+  <parameter name="StudentName" value="Dasanapura"/>
+  <parameter name="username" value="Newvision"/>
+  <parameter name="s-url" value="http://newvision.mastorly.com/login"/>
+  <listeners>
+    <listener class-name="com.mastorly.utilities.Listener"/>
+  </listeners>
+  <test thread-count="5" name="Test(failed)" verbose="0">
+    <classes>
+      <class name="com.mastorly.testcase.BaseClass">
+        <methods>
+          <include name="baseTest"/>
+        </methods>
+      </class> <!-- com.mastorly.testcase.BaseClass -->
+      <class name="com.mastorly.testcase.Student">
+        <methods>
+          <include name="baseTest"/>
+          <include name="TestCase_1"/>
+          <include name="TestCase_2"/>
+          <include name="TestCase_3"/>
+        </methods>
+      </class> <!-- com.mastorly.testcase.Student -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

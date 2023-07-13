@@ -12,12 +12,10 @@
 	<parameter name="s-url" value="http://newvision.mastorly.com/login"></parameter>
 	<test thread-count="5" name="Test">
 		<classes>
-			
-			<class name="com.mastorly.testcase.BaseClass" />
-			<class name="com.mastorly.testcase.Student" />
-
+			<class name="com.mastorly.testcase.InstituteSetup">
+			</class>
 		</classes>
-	</test> <!--
+	</test> <!--	
 	Test -->
 </suite> <!--
 Suite -->

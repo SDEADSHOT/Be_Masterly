@@ -11,12 +11,12 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.mastorly.testcase.Student">
+      <class name="com.mastorly.testcase.InstituteSetup">
         <methods>
-          <include name="TestCase_4"/>
           <include name="baseTest"/>
+          <include name="TestCase_3"/>
         </methods>
-      </class> <!-- com.mastorly.testcase.Student -->
+      </class> <!-- com.mastorly.testcase.InstituteSetup -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

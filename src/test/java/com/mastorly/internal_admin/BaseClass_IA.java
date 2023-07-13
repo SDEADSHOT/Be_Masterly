@@ -6,36 +6,45 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.BeforeTest;
 
-import com.mastorly.pom.LoginPage;
-import com.mastorly.testdata.Data;
+import com.mastorly.internal_admin_pom.Institutions;
+import com.mastorly.internal_admin_pom.LoginPage;
+import com.mastorly.internal_admin_pom.MenuBar;
+import com.mastorly.testdata.InternalAdmin;
 
-public class BaseClass_IA extends Data {
+public class BaseClass_IA {
 
-	static WebDriver driver = null;
+	static WebDriver driver;
+	static WebDriverWait wait;
 	static LoginPage loginpage;
-	static Data data = new Data();
+	static MenuBar menubar;
+	static Institutions institution;
+	static InternalAdmin admindata = new InternalAdmin();
 
 	// @Parameters({ "browser", "url", "username", "password" })
-	@Test
+	@BeforeTest
 	public void baseTest() {
-
-		if (browser.equalsIgnoreCase("Chrome"))
+		//System.out.println(data.browser());
+		if (admindata.browser().equalsIgnoreCase("chrome"))
 			driver = new ChromeDriver();
-		else if (browser.equalsIgnoreCase("Firefox"))
+		else if (admindata.browser().equalsIgnoreCase("Firefox"))
 			driver = new FirefoxDriver();
 		else
 			driver = new EdgeDriver();
 
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-		driver.get(adminUrl);
+		driver.get(admindata.adminUrl());
 
 		loginpage = new LoginPage(driver);
-		loginpage.username().sendKeys("7262940840");
-		loginpage.password().sendKeys("Genext@123");
+		menubar = new MenuBar(driver);
+		wait= new WebDriverWait(driver, Duration.ofSeconds(50));
+		institution = new Institutions(driver);
+		loginpage.username().sendKeys(admindata.adminUN());
+		loginpage.password().sendKeys(admindata.adminP());
 		loginpage.signing_in().click();
+
 	}
 }

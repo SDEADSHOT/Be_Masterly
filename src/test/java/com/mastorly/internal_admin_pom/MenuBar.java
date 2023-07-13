@@ -31,58 +31,58 @@ public class MenuBar {
 	By Leads = By.xpath("//span[text()='Leads']");
 	By Settings = By.xpath("//span[text()='Settings']");
 
-	public void dashboard() {
+	public void navigatingToDashboard() {
 		action.moveToElement(driver.findElement(DashBoard)).click().perform();
 	}
 
-	public void institue() {
+	public void navigatingToInstitue() {
 		action.moveToElement(driver.findElement(Institute)).click().perform();
 	}
 
-	public void trial() {
+	public void navigatingToTrial() {
 		action.moveToElement(driver.findElement(Trial)).click().perform();
 	}
 
-	public void attendance() {
+	public void navigatingToAttendance() {
 		action.moveToElement(driver.findElement(Attendance)).click().perform();
 	}
 
-	public void students() {
+	public void navigatingToStudents() {
 		action.moveToElement(driver.findElement(Users)).click().perform();
 		action.moveToElement(driver.findElement(Students)).click().perform();
 	}
 
-	public void admins() {
+	public void navigatingToAdmins() {
 		action.moveToElement(driver.findElement(Users)).click().perform();
 		action.moveToElement(driver.findElement(Admins)).click().perform();
 	}
 
-	public void tutors() {
+	public void navigatingToTutors() {
 		action.moveToElement(driver.findElement(Users)).click().perform();
 		action.moveToElement(driver.findElement(Tutors)).click().perform();
 	}
 
-	public void callNow() {
+	public void navigatingToCallNow() {
 		action.moveToElement(driver.findElement(Call_Now)).click().perform();
 	}
 
-	public void classes() {
+	public void navigatingToClasses() {
 		action.moveToElement(driver.findElement(Classes)).click().perform();
 	}
 
-	public void subjects() {
+	public void navigatingToSubjects() {
 		action.moveToElement(driver.findElement(Subjects)).click().perform();
 	}
 
-	public void schedule() {
+	public void navigatingToSchedule() {
 		action.moveToElement(driver.findElement(Schedule)).click().perform();
 	}
 
-	public void liveSession() {
+	public void navigatingToLiveSession() {
 		action.moveToElement(driver.findElement(Live_Sessions)).click().perform();
 	}
 
-	public void cart() {
+	public void navigatingToCart() {
 		action.moveToElement(driver.findElement(Cart)).click().perform();
 	}
 }

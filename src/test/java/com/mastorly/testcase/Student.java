@@ -13,8 +13,8 @@ public class Student extends BaseClass {
 	@Test(priority = 1)
 	public void TestCase_1() throws InterruptedException {
 		/** Verify that admin is able to create a student */
-		menubar.users();
-		menubar.usersStudent();
+		menubar.navigatingToUsers();
+		menubar.navigatingToUsersStudent();
 		students.addStudent().click();
 
 		students.scrollToPersonalInformation();
@@ -65,8 +65,8 @@ public class Student extends BaseClass {
 	@Test(priority = 4)
 	public void TestCase_4() throws InterruptedException, AWTException {
 		/** Verify that admin is able to create a student */
-		menubar.users();
-		menubar.usersStudent();
+		menubar.navigatingToUsers();
+		menubar.navigatingToUsersStudent();
 		students.bulkUpload().click();
 		Thread.sleep(3000);
 		students.uploadFile().sendKeys("C:\\Users\\User.TYSS-RAJESHWAR\\Downloads\\Student_1.csv");

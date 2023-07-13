@@ -21,41 +21,55 @@ public class MenuBar {
 	By UsersStudent = By.xpath("//span[text()='Students']");
 	By UsersAdmin_Tutor = By.xpath("//span[text()='Admin/Tutors']");
 	By Institute_Setup = By.xpath("//span[text()='Institute Setup']");
+	By offerings = By.xpath("//span[text()='Offerings']");
+	By Academic_Cycle = By.xpath("//span[text()='Academic Cycle']");
+	By Batches = By.xpath("//span[text()='Batches']");
 	By Fee_management = By.xpath("//span[text()='Fee management']");
 
-	public void dashboard() {
+	public void navigatingToDashboard() {
 		action.moveToElement(driver.findElement(DashBoard)).click().perform();
 	}
 
-	public void classroom() {
+	public void navigatingToClassroom() {
 		action.moveToElement(driver.findElement(Classroom)).click().perform();
 	}
 
-	public void study_Material() {
+	public void navigatingToStudy_Material() {
 		action.moveToElement(driver.findElement(Study_Material)).click().perform();
 	}
 
-	public void test_Pro() {
+	public void navigatingToTest_Pro() {
 		action.moveToElement(driver.findElement(Test_Pro)).click().perform();
 	}
-	
-	public void users() {
+
+	public void navigatingToUsers() {
 		action.moveToElement(driver.findElement(Users)).click().perform();
 	}
 
-	public void usersStudent() {
+	public void navigatingToUsersStudent() {
 		action.moveToElement(driver.findElement(UsersStudent)).click().perform();
 	}
 
-	public void usersAdmin_Tutor() {
+	public void navigatingToUsersAdmin_Tutor() {
 		action.moveToElement(driver.findElement(UsersAdmin_Tutor)).click().perform();
 	}
 
-	public void institute_Setup() {
+	public void navigatingToInstitute_Setup_Offerings() {
 		action.moveToElement(driver.findElement(Institute_Setup)).click().perform();
+		action.moveToElement(driver.findElement(offerings)).click().perform();
 	}
 
-	public void fee_management() {
+	public void navigatingToInstitute_Setup_AcademicCycle() {
+		action.moveToElement(driver.findElement(Institute_Setup)).click().perform();
+		action.moveToElement(driver.findElement(Academic_Cycle)).click().perform();
+	}
+
+	public void navigatingToInstitute_Setup_Batches() {
+		action.moveToElement(driver.findElement(Institute_Setup)).click().perform();
+		action.moveToElement(driver.findElement(Batches)).click().perform();
+	}
+
+	public void navigatingToFee_management() {
 		action.moveToElement(driver.findElement(Fee_management)).click().perform();
 	}
 }

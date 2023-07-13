@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-	<parameter name="browser" value="chrome"></parameter>
-	<parameter name="url" value="http://admin.mastorly.com/admin"></parameter>
-	<parameter name="username" value="7262940840"></parameter>
-	<parameter name="password" value="Genext@123"></parameter>
+
 	<test thread-count="5" name="Internal_Admin">
 		<classes>
-
 			<class name="com.mastorly.internal_admin.BaseClass_IA" />
-
+			<class name="com.mastorly.internal_admin.Creating_Institute" />
 		</classes>
 	</test> <!--
 	Test -->

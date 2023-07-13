@@ -7,9 +7,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
+import com.mastorly.pom.InstituteSetup_AcademicCycle;
+import com.mastorly.pom.InstituteSetup_Batches;
+import com.mastorly.pom.InstituteSetup_Offerings;
 import com.mastorly.pom.LoginPage;
 import com.mastorly.pom.MenuBar;
 import com.mastorly.pom.Students;
@@ -22,6 +26,10 @@ public class BaseClass {
 	static Students students = null;
 	static Actions action = null;
 	static Compare com = new Compare();
+	static InstituteSetup_Offerings offerings;
+	static WebDriverWait wait = null;
+	static InstituteSetup_AcademicCycle academicCycle = null;
+	static InstituteSetup_Batches batches = null;
 
 	@Parameters({ "browser", "s-url", "username", "password" })
 	@BeforeTest
@@ -34,18 +42,21 @@ public class BaseClass {
 			driver = new EdgeDriver();
 
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		driver.get(url);
 
 		loginpage = new LoginPage(driver);
 		loginpage.username().sendKeys(username);
 		loginpage.password().sendKeys(password);
 		loginpage.signing_in().click();
-
+		wait = new WebDriverWait(driver, Duration.ofSeconds(50));
 		menubar = new MenuBar(driver);
 		students = new Students(driver);
 		action = new Actions(driver);
+		academicCycle = new InstituteSetup_AcademicCycle(driver);
+		batches = new InstituteSetup_Batches(driver);
 		// com = new Compare();
+		offerings = new InstituteSetup_Offerings(driver);
 	}
 
 }

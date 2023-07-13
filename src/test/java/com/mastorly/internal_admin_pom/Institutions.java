@@ -10,13 +10,13 @@ import com.mastorly.utilities.Scroll;
 public class Institutions extends Scroll {
 	WebDriver driver = null;
 
-	Institutions(WebDriver driver) {
+	public Institutions(WebDriver driver) {
 		this.driver = driver;
 		jse = (JavascriptExecutor) driver;
 	}
 
 	By Search = By.xpath("//span[text()='Search']");
-	By Add_Button = By.xpath("(//a[contains(@class,'btn-icon btn-primary')])[1]");
+	By Add_Button = By.xpath("//div[@class=\"drodown\"]/a[contains(@class,'btn-icon btn-primary')]");
 	By Add_Institution = By.xpath("//span[text()='Add Institution']");
 	By Enter_Domain = By.xpath("//input[@name='domain']");
 	By Enter_Institute = By.xpath("//input[@name='institute_name']");

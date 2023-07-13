@@ -3,14 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.mastorly.testcase.Student">
+      <class name="com.mastorly.testcase.InstituteSetup">
         <methods>
           <include name="baseTest"/>
-          <include name="TestCase_1"/>
-          <include name="TestCase_2"/>
           <include name="TestCase_3"/>
         </methods>
-      </class> <!-- com.mastorly.testcase.Student -->
+      </class> <!-- com.mastorly.testcase.InstituteSetup -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

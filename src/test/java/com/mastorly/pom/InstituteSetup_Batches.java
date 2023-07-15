@@ -44,12 +44,18 @@ public class InstituteSetup_Batches {
 		select.selectByVisibleText(offering);
 	}
 
-//	public void selectSubjects(String name) {
-//		while (true) {
-//			WebElement sub = driver.findElement(Subjects);
-//	
-//
-//	}
+	public void selectSubjects(String name) {
+		try {
+			Thread.sleep(10000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		driver.findElement(By.xpath("//div[text()='Select...']")).click();
+		action.moveToElement(driver.findElement(By.xpath("//div[text()='Select...']"))).sendKeys(name + Keys.ENTER)
+				.build().perform();
+
+	}
 
 	public void selectAcademicCycle(String academicCycle) {
 		select(Academic_Cycle);

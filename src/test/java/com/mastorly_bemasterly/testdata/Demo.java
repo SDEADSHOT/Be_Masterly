@@ -1,4 +1,4 @@
-package com.mastorly.testdata;
+package com.mastorly_bemasterly.testdata;
 
 public class Demo {
 	

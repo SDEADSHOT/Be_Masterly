@@ -12,7 +12,7 @@ import org.testng.annotations.BeforeTest;
 import com.mastorly.internal_admin_pom.Institutions;
 import com.mastorly.internal_admin_pom.LoginPage;
 import com.mastorly.internal_admin_pom.MenuBar;
-import com.mastorly.testdata.InternalAdmin;
+import com.mastorly_bemasterly.testdata.InternalAdmin;
 
 public class BaseClass_IA {
 

@@ -52,10 +52,11 @@ public class InstituteSetup extends BaseClass {
 		batches.addBatch().click();
 		batches.nameOfBatch().sendKeys("New*(*(*Notch");
 		batches.selectOffering("KSEAB (Karnatak Board)-English-IX");
-	//	batches.selectSubjects("Eng");
+		batches.selectSubjects("Select");
 		batches.selectAcademicCycle("New vision 1");
 		batches.startDate().sendKeys("12032023");
 		batches.endDate().sendKeys("12032024");
+		batches.saveNext().click();
 	}
 
 }

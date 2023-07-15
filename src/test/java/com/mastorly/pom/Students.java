@@ -3,6 +3,11 @@ package com.mastorly.pom;
 import static org.testng.Assert.assertTrue;
 import static org.testng.Assert.fail;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -58,6 +63,7 @@ public class Students extends Scroll {
 	By Student_Lists = By.xpath("//td//span[@class='tb-lead']");
 	By UploadFile = By.xpath("//div[@class='fileUploader']");
 	By Upload = By.xpath("//a[text()='Upload']");
+	By Submit = By.xpath("//button[text()='Submit']");
 
 	public static void select(By ele) {
 		select = new Select(driver.findElement(ele));
@@ -203,7 +209,27 @@ public class Students extends Scroll {
 		return driver.findElement(UploadFile);
 	}
 
+	public void uploadingFile(String filename) throws AWTException {
+
+		Robot r = new Robot();
+		StringSelection s = new StringSelection(filename);
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(s, null);
+		r.delay(4000);
+		r.keyPress(KeyEvent.VK_CONTROL);
+		r.keyPress(KeyEvent.VK_V);
+		r.keyRelease(KeyEvent.VK_CONTROL);
+		r.keyRelease(KeyEvent.VK_V);
+
+		r.keyPress(KeyEvent.VK_ENTER);
+		r.keyRelease(KeyEvent.VK_ENTER);
+	}
+
 	public WebElement upload() {
 		return driver.findElement(Upload);
+	}
+
+	public WebElement submit() {
+		jse.executeScript("arguments[0].click();", driver.findElement(Submit));
+		return driver.findElement(Submit);
 	}
 }

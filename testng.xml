@@ -4,18 +4,15 @@
 	<listeners>
 		<listener class-name="com.mastorly.utilities.Listener"></listener>
 	</listeners>
-	<parameter name="StudentName" value="Dasanapura"></parameter>
-	<parameter name="browser" value="chrome"></parameter>
-	<parameter name="username" value="Newvision"></parameter>
-	<parameter name="password" value="Genext@123"></parameter>
-	<parameter name="browser" value="chrome"></parameter>
-	<parameter name="s-url" value="http://newvision.mastorly.com/login"></parameter>
 	<test thread-count="5" name="Test">
 		<classes>
-			<class name="com.mastorly.testcase.InstituteSetup">
+			<class name="com.mastorly.testcase.Student">
+				<methods>
+					<include name="TestCase_4"></include>
+				</methods>
 			</class>
 		</classes>
+		
 	</test> <!--	
-	Test -->
-</suite> <!--
+	Test --></suite> <!--/
 Suite -->

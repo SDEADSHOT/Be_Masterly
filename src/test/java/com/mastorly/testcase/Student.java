@@ -16,34 +16,33 @@ public class Student extends BaseClass {
 		menubar.navigatingToUsers();
 		menubar.navigatingToUsersStudent();
 		students.addStudent().click();
-
 		students.scrollToPersonalInformation();
-		students.studentName().sendKeys("Dasanapura");
-		students.studentRollNumber().sendKeys("98829896249369");
-		students.mobileNumber().sendKeys("9886645637");
-		students.emailId().sendKeys("dummy@gmail.com");
-		students.gender("Male");
+		students.studentName().sendKeys(data.b_studentName());
+		students.studentRollNumber().sendKeys(data.b_rollNumber());
+		students.mobileNumber().sendKeys(data.b_rollNumber());
+		students.emailId().sendKeys(data.b_email());
+		students.gender(data.b_gender());
 
-		students.parentFirstName_1().sendKeys("Parent_1");
-		students.parentLastName_1().sendKeys("L");
-		students.ParentRelationship_1("Father");
-		students.parentEmailID_1().sendKeys("parent2@gmail.com");
-		students.Parent_Mobile_Number_1().sendKeys("9886645637");
+		students.parentFirstName_1().sendKeys(data.b_ParentFirstName_1());
+		students.parentLastName_1().sendKeys(data.b_ParentLastName_1());
+		students.ParentRelationship_1(data.b_relation_1());
+		students.parentEmailID_1().sendKeys(data.b_ParentEmail_1());
+		students.Parent_Mobile_Number_1().sendKeys(data.b_ParentMobileNumber_1());
 
-		students.parentFirstName_2().sendKeys("Parent_2");
-		students.parentLastName_2().sendKeys("L");
-		students.ParentRelationship_2("Mother");
-		students.parentEmailID_2().sendKeys("parent2@gmail.com");
-		students.Parent_Mobile_Number_2().sendKeys("9886645637");
+		students.parentFirstName_2().sendKeys(data.b_ParentFirstName_2());
+		students.parentLastName_2().sendKeys(data.b_ParentLastName_2());
+		students.ParentRelationship_2(data.b_relation_2());
+		students.parentEmailID_2().sendKeys(data.b_ParentEmail_2());
+		students.Parent_Mobile_Number_2().sendKeys(data.b_ParentMobileNumber_2());
 
-		students.address().sendKeys("Hesaraghatta");
-		students.pinCode().sendKeys("560088");
-		students.state("Karnataka");
+		students.address().sendKeys(data.b_Address());
+		students.pinCode().sendKeys(data.b_pincode());
+		students.state(data.b_state());
 		Thread.sleep(3000);
 		students.city("117");
 
 		// students.cancel().click();
-		students.save().click();
+		// students.save().click();
 
 	}
 
@@ -52,13 +51,13 @@ public class Student extends BaseClass {
 		/**
 		 * Verify that admin is able to view newly created student in the student list.
 		 */
-		com.compareStudentWithList("Dasanapura");
+		com.compareStudentWithList(data.b_studentName());
 	}
 
 	@Parameters({ "StudentName" })
 	@Test(priority = 3)
 	public void TestCase_3(String student_Name) {
-		students.getActiveStatus(student_Name);
+		students.getActiveStatus(data.b_studentName());
 
 	}
 
@@ -69,9 +68,13 @@ public class Student extends BaseClass {
 		menubar.navigatingToUsersStudent();
 		students.bulkUpload().click();
 		Thread.sleep(3000);
-		students.uploadFile().sendKeys("C:\\Users\\User.TYSS-RAJESHWAR\\Downloads\\Student_1.csv");
+		// jse.executeAsyncScript("arguments[0].click();", students.uploadFile());
+		students.uploadFile().click();
+		Thread.sleep(3000);
+		students.uploadingFile(data.b_fileUpload());
 		Thread.sleep(4000);
-		students.upload().click();
+
+		// students.submit().click();
 
 	}
 }

@@ -25,6 +25,7 @@ public class MenuBar {
 	By Academic_Cycle = By.xpath("//span[text()='Academic Cycle']");
 	By Batches = By.xpath("//span[text()='Batches']");
 	By Fee_management = By.xpath("//span[text()='Fee management']");
+	By Students=By.xpath("//span[text()='Students']");
 
 	public void navigatingToDashboard() {
 		action.moveToElement(driver.findElement(DashBoard)).click().perform();
@@ -47,10 +48,12 @@ public class MenuBar {
 	}
 
 	public void navigatingToUsersStudent() {
+		action.moveToElement(driver.findElement(Users)).click().perform();
 		action.moveToElement(driver.findElement(UsersStudent)).click().perform();
 	}
 
 	public void navigatingToUsersAdmin_Tutor() {
+		action.moveToElement(driver.findElement(Users)).click().perform();
 		action.moveToElement(driver.findElement(UsersAdmin_Tutor)).click().perform();
 	}
 
@@ -67,6 +70,11 @@ public class MenuBar {
 	public void navigatingToInstitute_Setup_Batches() {
 		action.moveToElement(driver.findElement(Institute_Setup)).click().perform();
 		action.moveToElement(driver.findElement(Batches)).click().perform();
+	}
+	
+	public void navigatingToInstitute_Setup_Students() {
+		action.moveToElement(driver.findElement(Institute_Setup)).click().perform();
+		action.moveToElement(driver.findElement(Students)).click().perform();
 	}
 
 	public void navigatingToFee_management() {
